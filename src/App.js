@@ -47,42 +47,36 @@ class App extends Component {
     }
   }
   // -1:pre  1:next
-  NextMonth=()=>{
-      let {month,year,now}=this.state;    
-      month=month+1;
-     
-      if (month>=12)
-      {
-          year=year+1;
-          month=0;
-      }
-        
-      now=new Date(year,month,1);
-     
-      this.setState({
-          now,year,month
+  ChangeMonth=(flag)=>{
 
-      });
-        
-  }
-
-  PreMonth=()=>{
     let {month,year,now}=this.state;    
-    month=month-1;
-   
-    if (month<=0)
+    if(flag===1)
     {
-        year=year-1;
-        month=11;
+        month=month+1;
+    
+        if (month>=12)
+        {
+            year=year+1;
+            month=0;
+        }
+    }else{
+
+        month=month-1;
+        
+        if (month<=0)
+        {
+            year=year-1;
+            month=11;
+        }
     }
-      
     now=new Date(year,month,1);
    
     this.setState({
         now,year,month
 
     });
-      
+
+
   }
 
   render() {
@@ -95,11 +89,11 @@ class App extends Component {
       <center>
       <div>
             <table>
-               
+          
                  <tr>  
-                    <th><button className='btn'  onClick={()=>this.PreMonth()}>{"<<"}</button></th>
+                    <th><button className='btn'  onClick={()=>this.ChangeMonth(-1)}>{"<<"}</button></th>
                     <th><h1><div className="b">{this.state.year+"/"+(this.state.month+1)}</div></h1></th>
-                    <th><button className='btn' onClick={()=>this.NextMonth()}>{">>"}</button></th>
+                    <th><button className='btn' onClick={()=>this.ChangeMonth(1)}>{">>"}</button></th>
                 </tr>           
            </table>
             </div>

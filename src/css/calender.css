@@ -1,0 +1,41 @@
+.grid{
+    border: 1px solid #666;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: top;
+    background-color: aliceblue;
+  }
+  .game{
+    user-select: none;
+  }
+  
+  .board{
+    width: 610px;
+  }
+  .a{
+    margin:10 auto;    
+    vertical-align: middle;
+    height: 30px;
+    
+  }
+  .b{
+    margin:10 auto;    
+    vertical-align: middle;
+    width: 400px;
+    
+  }
+  .grid.today{
+    background-color:yellowgreen
+
+  }
+
+  .btn{
+       width: 80px;
+       height: 80px;
+
+  }
